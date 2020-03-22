@@ -1,0 +1,27 @@
+Mean for logins for Text21: 
+Mean total logins for Text21: 5.53703703703704 
+Mean successful logins for Text21: 4.68518518518519 
+Mean unsuccessful logins for Text21: 0.851851851851852 
+
+Standard deviation for logins for Text21: 
+Standard deviation of total logins for Text21: 2.16936616221702 
+Standard deviation of successful logins for Text21: 1.14634898822097 
+Standard deviation of unsuccessful logins for Text21: 1.84705178041245 
+
+Median for logins for Text21: 
+Median total logins for Text21: 5 
+Median successful logins for Text21: 5 
+Median unsuccessful logins for Text21: 0 
+
+Mean for login time for for Text21: 
+Mean successful login time for Text21: 8.7152557319224 
+Mean unsuccessful login time for Text21: 8.89411764705882 
+
+Standard deviation for login time for Text21: 
+Standard deviation of successful login time for Text21: 3.55057642848074 
+Standard deviation of unsuccessful login time for Text21: 4.86954445870393 
+
+Median for login time for Text21: 
+Median successful login time for Text21: 8.1 
+Median unsuccessful login time for Text21: 7 
+

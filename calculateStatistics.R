@@ -1,5 +1,5 @@
 # don't forget to set working directory using `setwd("DIR")`
-output_file <- "output.pdf"; # output file for stats
+output_file <- "output"; # output file for stats
 data <- read.table("combined.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
 
 # format is userId passwordScheme totalLogins successfulLogins unsuccessfulLogins avgSuccessLoginTime avgFailedLoginTime
@@ -11,11 +11,11 @@ image_data = full_data$Image21;
 
 
 calculateStatistics <- function(data, scheme) {
-	sink(paste(scheme, "text", output_file));
+	sink(paste(scheme, "text", output_file, ".txt", sep=""));
 	calculateLoginStats(data, scheme);
 	calculateTimeStats(data, scheme);
 	sink();
-	pdf(file = paste(scheme, output_file));
+	pdf(file = paste(scheme, output_file, ".pdf", sep=""));
 	createLoginHistograms(data, scheme);
 	createTimeHistograms(data, scheme);
 	dev.off();
@@ -55,7 +55,7 @@ calculateLoginStats <- function(data, scheme) {
 }
 
 calculateTimeStats <- function(data, scheme) {
-	cat(paste("Mean for login time for for", scheme),"\n");
+	cat(paste("Mean for login time for", scheme),"\n");
 	meanSuccessfulUserLoginsTime <- mean(data$avgSuccessLoginTime[data$avgSuccessLoginTime > 0]);
 	cat(paste("Mean successful login time for", scheme, meanSuccessfulUserLoginsTime), "\n");
 	
