@@ -11,7 +11,7 @@ image_data = full_data$Image21;
 
 
 calculateStatistics <- function(data, scheme) {
-	sink(paste(scheme, output_file));
+	sink(paste(scheme, "text", output_file));
 	calculateLoginStats(data, scheme);
 	calculateTimeStats(data, scheme);
 	sink();
