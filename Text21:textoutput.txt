@@ -13,7 +13,7 @@ Median total logins for Text21: 5
 Median successful logins for Text21: 5 
 Median unsuccessful logins for Text21: 0 
 
-Mean for login time for for Text21: 
+Mean for login time for Text21: 
 Mean successful login time for Text21: 8.7152557319224 
 Mean unsuccessful login time for Text21: 8.89411764705882 
 

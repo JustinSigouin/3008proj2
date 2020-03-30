@@ -4,3 +4,6 @@ To run first set working directory to current directory by running
 
 Then run the calculate statistics script with: 
 `source(paste(getwd(), "/calculateStatistics.R", sep=""));`
+
+# Documentation
+

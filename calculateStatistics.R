@@ -1,14 +1,7 @@
 # don't forget to set working directory using `setwd("DIR")`
 output_file <- "output"; # output file for stats
-data <- read.table("combined.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
 
 # format is userId passwordScheme totalLogins successfulLogins unsuccessfulLogins avgSuccessLoginTime avgFailedLoginTime
-
-full_data <- split(data, data$passwordScheme);
-
-text_data = full_data$Text21;
-image_data = full_data$Image21;
-
 
 calculateStatistics <- function(data, scheme) {
 	sink(paste(scheme, "text", output_file, ".txt", sep=""));
@@ -87,10 +80,10 @@ createLoginHistograms <- function(data, scheme) {
 }
 
 createTimeHistograms <- function(data, scheme) {
-	b <- NULL;
-	ifelse(scheme == "Text21:", b <- seq(0, 20, l=20), b <- seq(0, 40, l=20));
+	b <- seq(0, 80, l=20);
+	# ifelse(scheme == "Text21:", b <- seq(0, 20, l=20), b <- seq(0, 40, l=20));
 	hist(data$avgSuccessLoginTime[data$avgSuccessLoginTime > 0], main=paste(scheme, "Average Successful Login Time"), b, xlab="Successful Login Time", col="darkmagenta");
-	ifelse(scheme == "Text21:", b <- seq(0, 30, l=30), b <- seq(0, 60, l=20));
+	# ifelse(scheme == "Text21:", b <- seq(0, 30, l=30), b <- seq(0, 60, l=20));
 	hist(data$avgFailedLoginTime[data$avgFailedLoginTime > 0], main=paste(scheme, "Average Unsuccessful Login Time"), b,  xlab="Unsuccessful Login Time", col="green");
 	
 	boxplot(data$avgSuccessLoginTime[data$avgSuccessLoginTime > 0], main=paste(scheme, "Box Plot Of Average Successful Login Time"), xlab="Successful Login Time");
@@ -98,5 +91,52 @@ createTimeHistograms <- function(data, scheme) {
 
 }
 
-calculateStatistics(text_data, "Text21:");
-calculateStatistics(image_data, "Image21:");
+runOtherData <- function() {
+	data <- read.table("combined.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
+	full_data <- split(data, data$passwordScheme);
+
+	text_data = full_data$Text21;
+	image_data = full_data$Image21;
+	calculateStatistics(text_data, "Text21:");
+	calculateStatistics(image_data, "Image21:");
+}
+
+runOurData <- function() {	
+	data <- read.table("combined_ours.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
+	calculateStatistics(data, "Face Pass:");
+}
+
+runText21FirstDay <- function() {	
+	data <- read.table("text21_firstday.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
+	calculateStatistics(data, "Text21 First Day:");
+}
+
+compareSchemes <- function() {
+	face_data <- read.table("combined_ours.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
+	
+	text_data <- read.table("text21_firstday.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
+	result <- t.test(face_data$avgSuccessLoginTime[face_data$avgSuccessLoginTime > 0], text_data$avgSuccessLoginTime[text_data$avgSuccessLoginTime > 0], paired = FALSE);
+	return(result);
+}
+
+compareSchemesUnsuccessful <- function() {
+	face_data <- read.table("combined_ours.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
+	
+	text_data <- read.table("text21_firstday.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
+	result <- t.test(face_data$avgFailedLoginTime[face_data$avgFailedLoginTime > 0], text_data$avgFailedLoginTime[text_data$avgFailedLoginTime > 0], paired = FALSE);
+	return(result);
+}
+
+mannWhitneyTest <- function() {
+	face_data <- read.table("face_sucess_fail.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
+	
+	text_data <- read.table("text21_success_fail.csv", header = TRUE, sep = ","); # read csv file, ignore the column names
+	return(wilcox.test(face_data$success, text_data$success, paired=FALSE));
+}
+
+runOtherData();
+runOurData();
+success <- compareSchemes();
+unsucc <- compareSchemesUnsuccessful();
+mann <- mannWhitneyTest();
+runText21FirstDay();

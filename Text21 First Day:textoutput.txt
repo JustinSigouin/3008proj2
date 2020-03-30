@@ -1,0 +1,27 @@
+Mean for logins for Text21 First Day: 
+Mean total logins for Text21 First Day: 4.55555555555556 
+Mean successful logins for Text21 First Day: 3.27777777777778 
+Mean unsuccessful logins for Text21 First Day: 1.27777777777778 
+
+Standard deviation for logins for Text21 First Day: 
+Standard deviation of total logins for Text21 First Day: 2.72725292129865 
+Standard deviation of successful logins for Text21 First Day: 0.9582800496696 
+Standard deviation of unsuccessful logins for Text21 First Day: 2.69652402734805 
+
+Median for logins for Text21 First Day: 
+Median total logins for Text21 First Day: 3.5 
+Median successful logins for Text21 First Day: 3 
+Median unsuccessful logins for Text21 First Day: 0 
+
+Mean for login time for Text21 First Day: 
+Mean successful login time for Text21 First Day: 6.93452380952381 
+Mean unsuccessful login time for Text21 First Day: 7.88095238095238 
+
+Standard deviation for login time for Text21 First Day: 
+Standard deviation of successful login time for Text21 First Day: 2.4849025593824 
+Standard deviation of unsuccessful login time for Text21 First Day: 3.03485048401358 
+
+Median for login time for Text21 First Day: 
+Median successful login time for Text21 First Day: 5.83333333333333 
+Median unsuccessful login time for Text21 First Day: 7 
+

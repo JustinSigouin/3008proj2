@@ -13,7 +13,7 @@ Median total logins for Image21: 6
 Median successful logins for Image21: 5 
 Median unsuccessful logins for Image21: 1 
 
-Mean for login time for for Image21: 
+Mean for login time for Image21: 
 Mean successful login time for Image21: 15.7613756613757 
 Mean unsuccessful login time for Image21: 17.9486111111111 
 

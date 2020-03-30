@@ -1,0 +1,27 @@
+Mean for logins for Face Pass: 
+Mean total logins for Face Pass: 5 
+Mean successful logins for Face Pass: 1.85714285714286 
+Mean unsuccessful logins for Face Pass: 3.14285714285714 
+
+Standard deviation for logins for Face Pass: 
+Standard deviation of total logins for Face Pass: 2.21880078490092 
+Standard deviation of successful logins for Face Pass: 1.02710518202619 
+Standard deviation of unsuccessful logins for Face Pass: 2.68491921829898 
+
+Median for logins for Face Pass: 
+Median total logins for Face Pass: 5 
+Median successful logins for Face Pass: 2 
+Median unsuccessful logins for Face Pass: 3 
+
+Mean for login time for Face Pass: 
+Mean successful login time for Face Pass: 18.9358974358974 
+Mean unsuccessful login time for Face Pass: 22.112012987013 
+
+Standard deviation for login time for Face Pass: 
+Standard deviation of successful login time for Face Pass: 14.3930504162565 
+Standard deviation of unsuccessful login time for Face Pass: 11.7006518663318 
+
+Median for login time for Face Pass: 
+Median successful login time for Face Pass: 16.6666666666667 
+Median unsuccessful login time for Face Pass: 17.6 
+
